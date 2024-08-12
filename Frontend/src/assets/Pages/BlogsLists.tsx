@@ -33,17 +33,19 @@ export function Blogs () {
             <Appbar></Appbar>
         <div className="flex justify-center">
         <div>
-            {blogs.map(b=> <BlogCard
+            {blogs.map(b=> <BlogCard key={b.id}
             id={b.id}
             authorName={b.author.name || "Anonymous"}
             title={b.title}
             content={b.content}
-            publishedDate={"20 dec 2023"}
+            publishedDate={new Date(b.date || "20 dec 2023").toLocaleDateString()}
+            opacity={0}
             
             >
 
             </BlogCard>
             )}
+            
                 
             
         </div>

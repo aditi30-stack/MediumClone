@@ -25,7 +25,7 @@ export type CreatePostType = z.infer<typeof createPostInput>;
 export const updatePostInput = z.object({
     title: z.string(),
     content: z.string(),
-    published: z.boolean()
+    published:z.boolean()
 });
 
 export type UpdatePostType = z.infer<typeof updatePostInput>;

@@ -1,6 +1,6 @@
-import { Blog } from "../hooks"
-import { Appbar } from "./Pages/AppBar"
-import { Avatar } from "./Pages/BlogCard"
+import { Blog } from "../../hooks"
+import { Appbar } from "./AppBar"
+import { Avatar } from "./BlogCard"
 export function FullBlog ({blog}:{blog:Blog}) {
     return (
         <div>

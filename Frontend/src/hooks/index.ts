@@ -40,6 +40,7 @@ export function useBlogs() {
     const [blogs, setBlogs] = useState<Blog[]>([]);
 
     useEffect(()=>{
+        setLoading(true)
         axios.get(`${BACKEND_URL}/api/v1/blog/bulk`, {
             headers: {
                 Authorization: localStorage.getItem("token")
@@ -49,6 +50,11 @@ export function useBlogs() {
             setBlogs(response.data)
             setLoading(false)
         })
+        .catch(e => {
+            console.log("Error occurred", e)
+            setLoading(false)
+
+        }) 
 
     }, [])
 
